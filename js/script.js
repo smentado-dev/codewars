@@ -698,4 +698,16 @@ Note: only positive integers will be tested.
 function otherAngle(a, b) {
   return 180 - (a + b);
 }
+// Question41 | ky8 | Remove exclamation marks
+
+/*
+Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+*/
+function RemoveExclamationMarks(str) {
+  return str.split("!").joint("");
+}
+
+function removeExclamationMarks(s) {
+  return s.replaceAll("!", "");
+}
     
