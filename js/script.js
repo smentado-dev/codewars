@@ -710,4 +710,57 @@ function RemoveExclamationMarks(str) {
 function removeExclamationMarks(s) {
   return s.replaceAll("!", "");
 }
-    
+// Question42 | ky8 | Remove exclamation marks
+
+/*
+Task
+Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+
+The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+Mind the input validation.
+
+Example
+{ 6, 2, 1, 8, 10 } => 16
+{ 1, 1, 11, 2, 3 } => 6
+Input validation
+If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return
+*/
+function sumArray(array) {
+  if (array == null) {
+    return 0;
+  } else if (array.length < 2) {
+    return 0;
+  } else {
+    array = array.sort(function (a, b) {
+      return a - b;
+    });
+    var total = 0;
+    for (var i = 1; i < array.length - 1; i++) {
+      total += array[i];
+    }
+    return total;
+  }
+}
+
+/*
+// ccccccccc
+Grade book
+Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
+
+Numerical Score	Letter Grade
+90 <= score <= 100	'A'
+80 <= score < 90	'B'
+70 <= score < 80	'C'
+60 <= score < 70	'D'
+0 <= score < 60	'F'
+Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
+*/
+function getGrade(s1, s2, s3) {
+  avg = (s1 + s2 + s3) / 3;
+  if (avg < 60) return "F";
+  else if (avg < 70) return "D";
+  else if (avg < 80) return "C";
+  else if (avg < 90) return "B";
+  else return "A";
+}   
