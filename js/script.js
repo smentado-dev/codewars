@@ -884,3 +884,17 @@ const points = (games) =>
 //test-cases
 console.log(points(["3:1", "2:2", "0:1"]), 4);
 // console.log(totalPoints(["3:1", "2:2", "0:1", "4:1", "2:1"]), 8);
+/*
+Question50 | ky8 | Grasshopper - Personalized Message
+Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+Use conditionals to return the proper message:
+
+case	return
+name equals owner	'Hello boss'
+otherwise	'Hello guest'
+*/
+
+function greet(name, boss) {
+  return name === boss ? "Hello boss" : "Hello guest";
+}
