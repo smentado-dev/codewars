@@ -898,3 +898,318 @@ otherwise	'Hello guest'
 function greet(name, boss) {
   return name === boss ? "Hello boss" : "Hello guest";
 }
+/*
+Question51 | ky8 | If you can't sleep, just count sheep!!
+
+If you can't sleep, just count sheep!!
+
+Task:
+Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+*/
+//posible solututions -> for loop i=0 sheep...
+
+function countSheep(num) {
+  let str = "";
+  for (let i = 1; i <= 3; i++) {
+    str += `${i} sheep...`;
+  }
+  return str;
+}
+
+console.log(countSheep(8));
+/*
+Question52 | ky8 | Count by X
+Create a function with two arguments that will return an array of the first n multiples of x.
+
+Assume both the given number and the number of times to count will be positive numbers greater than 0.
+
+Return the results as an array or list ( depending on language ).
+
+Examples
+countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+countBy(2,5) === [2,4,6,8,10]
+*/
+
+//return -> [n * x]
+//posible solutions -> let newArr = [] | for loop  .push()
+
+function multiplesOfx(num1, num2) {
+  let newArr = [];
+  for (let i = num1; i <= num1 * num2; num1++) {
+    return newArr.push(i);
+  }
+}
+// test-cases
+console.log(multiplesOfx(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+console.log(multiplesOfx(2, 5), [2, 4, 6, 8, 10]);
+/*
+Question52 | ky8 | Reversed Words
+Complete the solution so that it reverses all of the words within the string passed in.
+
+Words are separated by exactly one space and there are no leading or trailing spaces.
+
+Example(Input --> Output):
+
+"The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
+*/
+//posible solutions -> .split(' ') .reverse() .join(' ')
+
+function reverseWords(str) {
+  return str.split(" ").reverse().join(" ");
+}
+
+//test-cases
+console.log(
+  reverseWords("The greatest victory is that which requires no battle"),
+  "battle no requires which that is victory greatest The"
+);
+/*
+Question53 | ky8 | Get the mean of an array
+It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
+Return the average of the given array rounded down to its nearest integer. The array will never be empty.
+*/
+//
+//
+//return -> [ave rounded down ]
+//posible solutions -> ave = (+ all nums) / totalNums | Math.min()
+
+function ave(arr) {
+  return Math.floor(arr.reduce((acc, num) => acc + num) / arr.length);
+}
+//test-cases
+console.log(ave([2, 5, 3, 7, 8, 8]), 5);
+console.log(ave([2, 3, 4, 5, 2, 8]), 4);
+/*
+Question54 | ky8 | Get the mean of an array
+It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
+Return the average of the given array rounded down to its nearest integer. The array will never be empty.
+*/
+//
+//
+//return -> [ave rounded down ]
+//posible solutions -> ave = (+ all nums) / totalNums | Math.min()
+
+function ave(arr) {
+  return Math.floor(arr.reduce((acc, num) => acc + num) / arr.length);
+}
+//test-cases
+console.log(ave([2, 5, 3, 7, 8, 8]), 5);
+console.log(ave([2, 3, 4, 5, 2, 8]), 4);
+/*
+Question55 | ky8 | Convert a string to an array
+
+Write a function to split a string and convert it into an array of words.
+
+Examples (Input ==> Output):
+"Robin Singh" ==> ["Robin", "Singh"]
+
+"I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+*/
+//
+//
+//return = [array of words]
+// solution = .split(' ')
+
+function arrWords(str) {
+  return str.split(" ");
+}
+
+//test-cases
+console.log(arrWords("Robin Singh"), ["Robin", "Singh"]);
+console.log(arrWords("I love arrays they are my favorite"), [
+  "I",
+  "love",
+  "arrays",
+  "they",
+  "are",
+  "my",
+  "favorite",
+]);
+/*
+Question56 | ky8 | Sentence Smash
+
+Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+
+Example
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+*/
+//
+//return = string, no spaces at beginning or end
+//solution = .join(' ') | .trim()
+
+function sentence(arr) {
+  return arr.join(" ").trim();
+}
+
+//test-cases
+console.log(
+  sentence(["hello", "world", "this", "is", "great"]),
+  "hello world this is great"
+);
+console.log(
+  sentence(["Hi", "river", "this", "is", "blue"]),
+  "Hi river this is blue"
+);
+/*
+Question57 | ky8 | Beginner - Reduce but Grow
+
+Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+
+
+*/
+//
+//
+//return = num
+//solution = .sort() | .reduce((acc, num) => acc * num )
+
+function finalValue(arr) {
+  return arr.sort().reduce((acc, num) => acc * num, 1);
+}
+
+//test-cases
+console.log(finalValue([1, 2, 3, 4]), 24);
+console.log(finalValue([5, 2, 4, 6, 7, 2]), 3360);
+/*
+Question58 | ky8 | Will you make it?
+
+You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
+
+Considering these factors, write a function that tells you if it is possible to get to the pump or not.
+
+Function should return true if it is possible and false if not.
+
+
+
+*/
+//return = true or false
+//solution = 25 miles * gallon - 2 gallons - 50 miles away | if else
+
+function getToPump(num) {
+  return num >= 25 ? true : false;
+}
+
+//test-cases
+console.log(getToPump(25), "true");
+console.log(getToPump(35), "true");
+console.log(getToPump(10), "false");
+console.log(getToPump(1), "false");
+/*
+Question59 | ky8 | How good are you really?
+There was a test in your class and you passed it. Congratulations!
+But you're an ambitious person. You want to know if you're better than the average student in your class.
+
+You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+Return True if you're better, else False!
+
+Note:
+Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+
+
+*/
+//
+//
+//return = true or false
+//solutions = peersScores.reduce((acc, num) => (acc + num) / 3, 0) | ternary operator
+
+function betterThanAve(peersScores, yourScore) {
+  return peersScores.reduce((acc, num) => acc + num, 0) / peersScores.length;
+}
+
+//test-cases
+console.log(betterThanAve([67, 48, 90, 87, 70], 1), "false");
+console.log(betterThanAve([67, 48, 90, 87, 70], 100), "true");
+/*
+Question60 | ky8 | DNA to RNA Conversion
+
+Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+
+Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+
+Create a function which translates a given DNA string into RNA.
+
+For example:
+
+"GCAT"  =>  "GCAU"
+The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
+
+*/
+// GCAT - GCAU
+//return = string
+//solution = split('') | replace('T', 'U') | join('')
+
+function dnaToRna(dna) {
+  const splitDna = dna.split("");
+  const replaceDna = splitDna.map((char) => (char === "T" ? "U" : char));
+  const joinDna = replaceDna.join("");
+
+  return joinDna;
+}
+
+//test-cases
+console.log(dnaToRna("GCAT"), "GCAU");
+/*
+Question61 | ky8 | Simple multiplication
+
+This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+*/
+//return = num
+//solutions = even * 8 | odd * 9 -> ternary operator
+function evenOrOdd(num) {
+  return num % 2 === 0 ? num * 8 : num * 9;
+}
+
+//test-cases
+console.log(evenOrOdd(3), 27);
+console.log(evenOrOdd(4), 32);
+console.log(evenOrOdd(10), 80);
+/*
+Question62 | ky8 | Find Maximum and Minimum Values of a List
+
+Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
+
+Examples (Input -> Output)
+* [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+* [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+* [42, 54, 65, 87, 0]             -> min = 0, max = 87
+* [5]                             -> min = 5, max = 5
+Notes
+You may consider that there will not be any empty arrays/vectors.
+
+*/
+
+//return = 2 functions (max, min)
+//solution = function(max) -> Math.max | function(min) -> Math.min
+function max(arr) {
+  return Math.max(...arr);
+}
+function min(arr) {
+  return Math.min(...arr);
+}
+
+//test-cases
+console.log(max([2, 5, 3, 7, 9, 4]), 9);
+console.log(min([2, 5, 3, 7, 9, 4]), 2);
+/*
+Question63 | ky8 | Jenny's secret message
+
+Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
+
+Can you help her?
+
+*/
+
+//
+//return = user -> 'hello' | Johnny -> 'how you doing?'
+//solution = if user -> 'hello' | Johnny -> 'how you doing?' | ternary operator
+
+function specialGreeting(user) {
+  return user === "Johnny" ? "how you doing?" : "hello";
+}
+
+//test-cases
+console.log(specialGreeting("user"), "hello");
+console.log(specialGreeting("Johnny"), "how you doing?");
